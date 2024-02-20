@@ -1,0 +1,36 @@
+#menuBar {
+    background-color: purple;
+    display: flex;
+    
+}
+
+#menuBar p {
+    
+    margin-left: 20px;
+    display: flex;
+}
+
+#menuBar span {
+    background-color: plum;
+    color: white;
+    padding: 10px;
+    margin-right: 20px;
+    
+}
+
+#menuBar span.home {
+    margin-left: 60px;   
+}
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    background-color: rgb(85, 85, 85);
+    color: white;
+    padding: 2px;
+}
