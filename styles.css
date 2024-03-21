@@ -1,36 +1,45 @@
-#menuBar {
-    background-color: purple;
-    display: flex;
-    
+html {
+    background-color: black;
 }
 
-#menuBar p {
-    
-    margin-left: 20px;
-    display: flex;
+
+#menuBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #073883;
 }
 
-#menuBar span {
-    background-color: plum;
+#menuBar li {
+    float: left;
+}
+      
+#menuBar li a {
+    display: block;
     color: white;
-    padding: 10px;
-    margin-right: 20px;
-    
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-#menuBar span.home {
-    margin-left: 60px;   
-}
+#menuBar li a:hover:not(.active) {
+    background-color: #0b60ba;
+  }
 
-
-
-
-
+.active {
+    background-color: #96b7d6;
+  }
 
 
 footer {
-    text-align: center;
     background-color: rgb(85, 85, 85);
     color: white;
-    padding: 2px;
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+}
+
+p.info {
+    text-align: center;
 }
