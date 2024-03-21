@@ -23,10 +23,13 @@ html {
     text-decoration: none;
 }
 
+/*The following code calls to the div container "menuBar" and its li elements, specifically the hyperlink elements. 
+These hyperlinks will apply the hover pseudo-class only to each li that is NOT affected by the "active" class, thus changing its background color.*/
 #menuBar li a:hover:not(.active) {
     background-color: #0b60ba;
   }
 
+/*The li with the active class will display in a different background color than those without the tag.*/
 .active {
     background-color: #96b7d6;
   }
