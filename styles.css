@@ -14,7 +14,7 @@ html {
 #menuBar li {
     float: left;
 }
-      
+
 #menuBar li a {
     display: block;
     color: white;
@@ -27,18 +27,18 @@ html {
 These hyperlinks will apply the hover pseudo-class only to each li that is NOT affected by the "active" class, thus changing its background color.*/
 #menuBar li a:hover:not(.active) {
     background-color: #0b60ba;
-  }
+}
 
-/*The li with the active class will display in a different background color than those without the tag.*/
+/*The li with the active class will display in a different background color than those without the tag. */
 .active {
     background-color: #96b7d6;
-  }
+}
 
 
 footer {
     background-color: rgb(85, 85, 85);
     color: white;
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -46,3 +46,191 @@ footer {
 p.info {
     text-align: center;
 }
+
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: Times, "Times New Roman", serif;
+  }
+  
+  /* dd container */
+  .dropdown {
+    display: block;
+    position: relative;
+    outline: none;
+    background-color: #96b7d6;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    text-align: center;
+  }
+
+  .dropdown-content p:first-child i{
+    color: #073883;
+
+  }
+  
+  /* button */
+  .dropbtn {
+    display: inline-block;
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+    background-color: #96b7d6;
+    transition: 0.35s ease-out;
+  }
+  .dropbtn:hover, .dropbtn.c:hover, .dropbtn.r:hover {
+    background-color: #073883;
+  }
+  
+  /* dd content */
+  .dropdown .dropdown-content {
+    position: absolute;
+    top: 50%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100000;
+    background-color: #f7f7f7;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transition: 0.35s ease-out;
+  }
+  
+
+  /* style text link */
+  .dropdown-content .tl {
+    color: #36f;
+    text-decoration: none;
+    border-bottom: 1px dotted #36f;
+    transition: 0.35s ease-out;
+  }
+  .dropdown-content .tl:hover {
+    border-bottom: 1px dotted transparent;
+  }
+  
+  /* show dd content */
+  .dropdown:focus .dropdown-content {
+    outline: none;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  
+  /* mask to close menu by clicking on the button */
+  .dropdown .db2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+  }
+  .dropdown:focus .db2 {
+    display: inline-block;
+  }
+  .dropdown .db2:focus .dropdown-content, .dropdown-content .db3:focus .dropdown-content {
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  /* button gradient */
+  .dropbtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 0 0, #fff 0%, #b6c8d8 5%, #9ebcd8 35%, transparent 60%);
+    background-repeat: no-repeat;
+    background-color: #96b7d6;
+    transition: 0.35s ease-out;
+  }
+  
+  /* show gradient backlight */
+  .dropdown:focus .dropbtn::before, .dropdown:focus .dropbtn.c::before, .dropdown:focus .dropbtn.r::before {
+  background-color: #80add6;
+  }
+  .dropdown:focus  {
+  z-index: 1;
+  }
+  .dropdown:focus .dropbtn  {
+  background: none;
+  }
+  
+  /* icon hamburger */
+  .dropbtn::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 3px;
+    margin-left: 10px;
+    border-top: 2px solid #fff;
+    border-bottom: 7px double #fff;
+  }
+  .dropdown:focus .dropbtn::after {
+    height: 0;
+    border-bottom: 0;
+    margin-bottom: 4px;
+  }
+  
+  /* icon content */
+  .dropbtn.i2::after {
+    content: "";
+    display: inline-block;
+    border: 0;
+    width: 15px;
+    height: 12px;
+    margin-left: 10px;
+    background:
+    linear-gradient(to right, #fff, #fff) 0px 0px/11px 2px, /* left top / width height */
+    linear-gradient(to right, #fff, #fff) 0px 5px/15px 2px,
+    linear-gradient(to right, #fff, #fff) 0px 10px/8px 2px;
+    background-repeat: no-repeat;
+  }
+  .dropdown:focus .dropbtn.i2::after {
+    width: 15px;
+    height: 12px;
+    background: linear-gradient(to right, #fff, #fff) 0px 10px/15px 2px;
+    background-repeat: no-repeat;
+  }
+  
+  /* icon x */
+  .dropdown-content .db3  {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 100%;
+    z-index: 10;
+    transition: 0.15s ease-out;
+  }
+  .dropdown-content .db3::before, .dropdown-content .db3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60%;           /* height icon */
+    width: 2px;            /* width icon  */
+    background: #3c4043;   /* color icon  */
+  }
+  .dropdown-content .db3::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .dropdown-content .db3::after  {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .dropdown-content .db3:hover   {
+    background: #d1d1d6;
+  }
+  
